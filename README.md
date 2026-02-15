@@ -1,6 +1,6 @@
 # Cow Detection and Tracking Project
 
-This project contains implementations for cow detection and tracking using YOLO, along with pathfinding algorithms (A* and D* Lite) for visualization purposes.
+This project contains implementations for cow detection and tracking using YOLO, along with pathfinding algorithms (A* and D*) for visualization purposes.
 
 ## Project Structure
 
@@ -9,7 +9,7 @@ Cow_detection_tracking/
 ├── Cow.ipynb                  # Jupyter notebook for cow detection and tracking
 ├── a_star_algorithm.py        # A* pathfinding without obstacles
 ├── a_star_obstacle.py         # A* pathfinding with obstacles
-├── d_star_algorithm.py        # D* Lite pathfinding algorithm
+├── d_star_algorithm.py        # D* pathfinding algorithm
 ├── yolo11m.pt                 # YOLO model weights
 ├── cow_video.mp4              # Input video for tracking
 ├── 1.png, 2.png, 3.png        # Sample images for detection
@@ -136,7 +136,7 @@ Controls:
 - Press R to restart after completion
 - Press ESC or Q to quit
 
-### 4. D* Lite Algorithm
+### 4. D* Algorithm
 
 With virtual environment activated:
 
@@ -145,7 +145,7 @@ python d_star_algorithm.py
 ```
 
 Controls:
-- Press SPACE to run D* Lite algorithm
+- Press SPACE to run D* algorithm
 - Press R to restart
 - Press ESC to quit
 
@@ -159,7 +159,7 @@ Controls:
 
 ### Pathfinding Algorithms
 - Visual demonstration of A* algorithm (with and without obstacles)
-- Visual demonstration of D* Lite algorithm
+- Visual demonstration of D* algorithm
 - Real-time animation showing algorithm progression
 - Color-coded visualization:
   - Blue: Start point
