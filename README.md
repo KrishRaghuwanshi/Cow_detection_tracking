@@ -1,6 +1,6 @@
 # Cow Detection and Tracking Project
 
-This project contains implementations for cow detection and tracking using YOLO, along with pathfinding algorithms (A* and D* Lite) for visualization purposes.
+This project contains implementations for cow detection and tracking using YOLO,BoT-SORT, along with pathfinding algorithms (A* and D* ) for visualization purposes.
 
 ## Project Structure
 
@@ -9,7 +9,7 @@ Cow_detection_tracking/
 ├── Cow.ipynb                  # Jupyter notebook for cow detection and tracking
 ├── a_star_algorithm.py        # A* pathfinding without obstacles
 ├── a_star_obstacle.py         # A* pathfinding with obstacles
-├── d_star_algorithm.py        # D* Lite pathfinding algorithm
+├── d_star_algorithm.py        # D* pathfinding algorithm
 ├── yolo11m.pt                 # YOLO model weights
 ├── cow_video.mp4              # Input video for tracking
 ├── 1.png, 2.png, 3.png        # Sample images for detection
@@ -32,10 +32,7 @@ Cow_detection_tracking/
 
 ### Step 1: Install Python Dependencies
 
-For cow detection and tracking:
-```bash
-pip install ultralytics opencv-python ipython
-```
+
 
 For pathfinding algorithms:
 ```bash
@@ -60,21 +57,8 @@ pip install ultralytics opencv-python ipython pygame
 3. Run cells sequentially from top to bottom
 4. The notebook will automatically install dependencies in the first cell
 
-#### Option B: Run Locally with Jupyter
-1. Install Jupyter:
-```bash
-pip install jupyter
-```
 
-2. Launch Jupyter Notebook:
-```bash
-jupyter notebook
-```
-
-3. Open `Cow.ipynb` in the browser
-4. Run cells sequentially from top to bottom
-
-#### Option C: Run with VS Code
+#### Option B: Run with VS Code
 1. Open the notebook in VS Code
 2. Select Python kernel
 3. Run cells sequentially
