@@ -97,30 +97,8 @@ deactivate
 3. Run cells sequentially from top to bottom
 4. The notebook will automatically install dependencies in the first cell
 
-#### Option B: Run Locally with Jupyter
-1. Activate virtual environment (if created):
-```bash
-# Windows
-venv\Scripts\activate
 
-# Linux/macOS
-source venv/bin/activate
-```
-
-2. Install Jupyter (if not already installed):
-```bash
-pip install jupyter
-```
-
-3. Launch Jupyter Notebook:
-```bash
-jupyter notebook
-```
-
-4. Open `Cow.ipynb` in the browser
-5. Run cells sequentially from top to bottom
-
-#### Option C: Run with VS Code
+#### Option B: Run with VS Code
 1. Open the notebook in VS Code
 2. Select Python kernel (choose the venv interpreter if using virtual environment)
 3. Run cells sequentially
