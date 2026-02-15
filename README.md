@@ -1,6 +1,6 @@
 # Cow Detection and Tracking Project
 
-This project contains implementations for cow detection and tracking using YOLO,BoT-SORT, along with pathfinding algorithms (A* and D* ) for visualization purposes.
+This project contains implementations for cow detection and tracking using YOLO, along with pathfinding algorithms (A* and D* Lite) for visualization purposes.
 
 ## Project Structure
 
@@ -9,7 +9,7 @@ Cow_detection_tracking/
 ├── Cow.ipynb                  # Jupyter notebook for cow detection and tracking
 ├── a_star_algorithm.py        # A* pathfinding without obstacles
 ├── a_star_obstacle.py         # A* pathfinding with obstacles
-├── d_star_algorithm.py        # D* pathfinding algorithm
+├── d_star_algorithm.py        # D* Lite pathfinding algorithm
 ├── yolo11m.pt                 # YOLO model weights
 ├── cow_video.mp4              # Input video for tracking
 ├── 1.png, 2.png, 3.png        # Sample images for detection
@@ -30,18 +30,58 @@ Cow_detection_tracking/
 
 ## Installation
 
-### Step 1: Install Python Dependencies
+### Step 1: Create Virtual Environment (Recommended for Python Scripts)
 
+For running the pathfinding algorithms (a_star_algorithm.py, a_star_obstacle.py, d_star_algorithm.py), it's recommended to use a virtual environment:
 
+#### On Windows:
+```bash
+# Navigate to project directory
+cd d:\Workspace\Cow_detection_tracking
 
-For pathfinding algorithms:
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+venv\Scripts\activate
+```
+
+#### On Linux/macOS:
+```bash
+# Navigate to project directory
+cd /path/to/Cow_detection_tracking
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+```
+
+### Step 2: Install Python Dependencies
+
+Once the virtual environment is activated (you should see `(venv)` in your terminal), install the required packages:
+
+For pathfinding algorithms only:
 ```bash
 pip install pygame
 ```
 
+For cow detection and tracking (if running locally):
+```bash
+pip install ultralytics opencv-python ipython jupyter
+```
+
 Or install all dependencies at once:
 ```bash
-pip install ultralytics opencv-python ipython pygame
+pip install pygame ultralytics opencv-python ipython jupyter
+```
+
+### Step 3: Deactivate Virtual Environment (When Done)
+
+After you're finished working, deactivate the virtual environment:
+```bash
+deactivate
 ```
 
 ## Running Instructions
@@ -57,16 +97,46 @@ pip install ultralytics opencv-python ipython pygame
 3. Run cells sequentially from top to bottom
 4. The notebook will automatically install dependencies in the first cell
 
+#### Option B: Run Locally with Jupyter
+1. Activate virtual environment (if created):
+```bash
+# Windows
+venv\Scripts\activate
 
-#### Option B: Run with VS Code
+# Linux/macOS
+source venv/bin/activate
+```
+
+2. Install Jupyter (if not already installed):
+```bash
+pip install jupyter
+```
+
+3. Launch Jupyter Notebook:
+```bash
+jupyter notebook
+```
+
+4. Open `Cow.ipynb` in the browser
+5. Run cells sequentially from top to bottom
+
+#### Option C: Run with VS Code
 1. Open the notebook in VS Code
-2. Select Python kernel
+2. Select Python kernel (choose the venv interpreter if using virtual environment)
 3. Run cells sequentially
 
 ### 2. A* Algorithm (No Obstacles)
 
-Run the basic A* pathfinding visualization:
+Make sure your virtual environment is activated, then run:
+
 ```bash
+# Activate venv first (Windows)
+venv\Scripts\activate
+
+# Or on Linux/macOS
+source venv/bin/activate
+
+# Run the script
 python a_star_algorithm.py
 ```
 
@@ -77,7 +147,8 @@ Controls:
 
 ### 3. A* Algorithm (With Obstacles)
 
-Run A* pathfinding with obstacles:
+With virtual environment activated:
+
 ```bash
 python a_star_obstacle.py
 ```
@@ -89,7 +160,8 @@ Controls:
 
 ### 4. D* Lite Algorithm
 
-Run the D* Lite pathfinding algorithm:
+With virtual environment activated:
+
 ```bash
 python d_star_algorithm.py
 ```
@@ -129,17 +201,55 @@ Controls:
 - Real-time visualization in pygame window
 - No file output (visualization only)
 
+## Quick Start Summary
+
+### For Pathfinding Algorithms:
+```bash
+# 1. Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # Linux/macOS
+
+# 2. Install dependencies
+pip install pygame
+
+# 3. Run any script
+python a_star_algorithm.py
+python a_star_obstacle.py
+python d_star_algorithm.py
+
+# 4. Deactivate when done
+deactivate
+```
+
+### For Jupyter Notebook:
+```bash
+# Option 1: Upload to Google Colab and run directly
+# Option 2: Run locally with Jupyter
+venv\Scripts\activate
+pip install jupyter ultralytics opencv-python ipython
+jupyter notebook
+# Open Cow.ipynb and run cells
+```
+
 ## Notes
 
 - Ensure all input files (images, videos, model weights) are in the same directory as the scripts
 - For the notebook, cells should be run in order
 - The YOLO model will automatically download if not present
 - Pathfinding algorithms use pygame for visualization and require a display
+- Always activate the virtual environment before running Python scripts
+- The virtual environment folder `venv/` should be added to `.gitignore` if using version control
 
 ## Troubleshooting
 
 ### Issue: Module not found
-Solution: Install the required dependencies using pip
+Solution: Make sure virtual environment is activated and dependencies are installed using pip
+
+### Issue: Virtual environment not activating
+Solution: 
+- Windows: Try `venv\Scripts\Activate.ps1` for PowerShell or `venv\Scripts\activate.bat` for Command Prompt
+- Check if Python is properly installed and added to PATH
 
 ### Issue: YOLO model not loading
 Solution: Ensure `yolo11m.pt` is in the correct directory or let ultralytics download it automatically
@@ -152,6 +262,9 @@ Solution: Install ffmpeg:
 - Windows: Download from ffmpeg.org
 - Linux: `sudo apt-get install ffmpeg`
 - macOS: `brew install ffmpeg`
+
+### Issue: Permission denied when creating venv
+Solution: Run terminal as administrator or check Python installation permissions
 
 ## License
 
